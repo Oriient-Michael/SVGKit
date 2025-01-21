@@ -4,17 +4,17 @@ import PackageDescription
 let package = Package(
     name: "SVGKit",
     platforms: [
-        .macOS(.v10_10),
         .iOS(.v13),
-        .tvOS(.v13)
     ],
     products: [
         .library(
             name: "SVGKit",
+            type: .static,
             targets: ["SVGKit"]
         ),
         .library(
             name: "SVGKitSwift",
+            type: .static,
             targets: ["SVGKitSwift"]
         )
     ],

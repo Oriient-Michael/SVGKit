@@ -877,9 +877,10 @@ static NSMutableDictionary* globalSVGKImageCache;
 	
 	float smallestScaleUp = MIN( wScale, hScale );
 	
-	if( smallestScaleUp < 1.0f )
-		smallestScaleUp = MAX( wScale, hScale ); // instead of scaling-up the smallest, scale-down the largest
-	
+//  It is not clear why this was in the original code, it causes the resulting size to not fit the maxSize
+//	if( smallestScaleUp < 1.0f )
+//		smallestScaleUp = MAX( wScale, hScale ); // instead of scaling-up the smallest, scale-down the largest
+//	
 	self.size = CGSizeApplyAffineTransform( self.size, CGAffineTransformMakeScale( smallestScaleUp, smallestScaleUp));
 }
 
