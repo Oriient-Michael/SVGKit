@@ -1,5 +1,5 @@
 //
-//  Header.h
+//  SVGKLogger.h
 //  SVGKit-iOS
 //
 //  Created by Michael Krutoyarskiy on 20/01/2025.

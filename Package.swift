@@ -2,26 +2,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "SVGKit",
+    name: "OriientSVG",
     platforms: [
         .iOS(.v13),
     ],
     products: [
         .library(
-            name: "SVGKit",
+            name: "OriientSVG",
             type: .static,
-            targets: ["SVGKit"]
-        ),
-        .library(
-            name: "SVGKitSwift",
-            type: .static,
-            targets: ["SVGKitSwift"]
+            targets: ["OriientSVG"]
         )
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "SVGKit",
+            name: "OriientSVG",
             dependencies: [],
             path: "Source",
             exclude: [
@@ -33,13 +28,6 @@ let package = Package(
                 .headerSearchPath("privateHeaders"),
                 .define("NS_BLOCK_ASSERTIONS", to: "1", .when(configuration: .release))
             ]
-        ),
-        .target(
-            name: "SVGKitSwift",
-            dependencies: [
-                "SVGKit"
-            ],
-            path: "Source/SwiftUI additions"
         )
     ]
 )
