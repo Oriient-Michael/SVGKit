@@ -164,8 +164,6 @@
 		D0B21B552016BD8A00974D0A /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B21B542016BD8A00974D0A /* heart.png */; };
 		D0D29C9220EC44080003CE47 /* M-to-S-to-T.svg in Resources */ = {isa = PBXBuildFile; fileRef = D0D29C9120EC44080003CE47 /* M-to-S-to-T.svg */; };
 		D0D29C9420EC441F0003CE47 /* M-to-S-to-T.png in Resources */ = {isa = PBXBuildFile; fileRef = D0D29C9320EC441F0003CE47 /* M-to-S-to-T.png */; };
-		FA5DF7261C434D54005CF231 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5DF7241C434C58005CF231 /* CocoaLumberjack.framework */; };
-		FA5DF7271C434D54005CF231 /* CocoaLumberjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA5DF7241C434C58005CF231 /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,7 +247,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				32AF7BC021738A0300142396 /* SVGKit.framework in Embed Frameworks */,
-				FA5DF7271C434D54005CF231 /* CocoaLumberjack.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,7 +431,6 @@
 				32AF7BBE217389FD00142396 /* SVGKit.framework in Frameworks */,
 				6661A77D1698BBE20061E349 /* CoreText.framework in Frameworks */,
 				6649E10F1617578500AFE92A /* libxml2.dylib in Frameworks */,
-				FA5DF7261C434D54005CF231 /* CocoaLumberjack.framework in Frameworks */,
 				6649E0AD1617479200AFE92A /* QuartzCore.framework in Frameworks */,
 				661A0DCF161727CF008D5FBE /* UIKit.framework in Frameworks */,
 				661A0DD1161727CF008D5FBE /* Foundation.framework in Frameworks */,
@@ -753,6 +749,12 @@
 			attributes = {
 				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = na;
+				TargetAttributes = {
+					661A0DC9161727CF008D5FBE = {
+						DevelopmentTeam = 4X885BV45Z;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 661A0DC4161727CF008D5FBE /* Build configuration list for PBXProject "Demo-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1176,6 +1178,9 @@
 		661A0DF5161727D0008D5FBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4X885BV45Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/3rd-party-frameworks/CocoaLumberjack-2.2.0/iOS",
@@ -1193,6 +1198,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "na.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Demo-iOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALIDATE_WORKSPACE = YES;
 				WRAPPER_EXTENSION = app;
 			};
