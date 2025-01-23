@@ -22,7 +22,7 @@ let package = Package(
             exclude: [
                 "SwiftUI additions"
             ],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")],
+            resources: [],
             publicHeadersPath: "include",
             cSettings: [
                 .headerSearchPath("privateHeaders"),
