@@ -7,8 +7,12 @@
 //
 
 #import "SVGKit.h"
+#import "SVGKLogger.h"
 
 @implementation SVGKit : NSObject
 
++ (void)setLoggerEnabled:(BOOL)enabled {
+    setSvgLoggerEnabled(enabled);
+}
 
 @end

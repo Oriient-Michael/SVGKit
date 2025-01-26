@@ -9,7 +9,13 @@
 #ifndef SVGKLogger_h
 #define SVGKLogger_h
 
-void SVGKitLogSetLogLevel(NSInteger level);
+
+#import <Foundation/Foundation.h>
+
+void setSvgLoggerEnabled(BOOL enabled);
+BOOL isSvgLoggerEnabled(void);
+
+
 void SVGKitLogError(NSString *format, ...);
 void SVGKitLogWarn(NSString *format, ...);
 void SVGKitLogInfo(NSString *format, ...);

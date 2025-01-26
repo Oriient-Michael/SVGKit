@@ -9,28 +9,53 @@
 #import <Foundation/Foundation.h>
 #import "SVGKLogger.h"
 
-// TODO: - Handle log level
-void SVGKitLogSetLogLevel(NSInteger level) {
+static BOOL isLoggerEnabled = NO;
 
+void setSvgLoggerEnabled(BOOL enabled) {
+    isLoggerEnabled = enabled;
+}
+
+BOOL isSvgLoggerEnabled(void) {
+    return isLoggerEnabled;
 }
 
 void SVGKitLogError(NSString *format, ...) {
-    NSLog(@"%@", format);
+    if (!isLoggerEnabled) return;
+    va_list args;
+    va_start(args, format);
+    NSLogv([NSString stringWithFormat:@"❌ ERROR: %@", format], args);
+    va_end(args);
 }
 
 void SVGKitLogWarn(NSString *format, ...) {
-    NSLog(@"%@", format);
+    if (!isLoggerEnabled) return;
+    va_list args;
+    va_start(args, format);
+    NSLogv([NSString stringWithFormat:@"⚠️ [WARNING]: %@", format], args);
+    va_end(args);
 }
 
 void SVGKitLogInfo(NSString *format, ...) {
-    NSLog(@"%@", format);
+    if (!isLoggerEnabled) return;
+    va_list args;
+    va_start(args, format);
+    NSLogv([NSString stringWithFormat:@"ℹ️ [INFO]: %@", format], args);
+    va_end(args);
 }
 
 void SVGKitLogDebug(NSString *format, ...) {
-    NSLog(@"%@", format);
+    if (!isLoggerEnabled) return;
+    va_list args;
+    va_start(args, format);
+    NSLogv([NSString stringWithFormat:@"🐞 [DEBUG]: %@", format], args);
+    va_end(args);
 }
 
 void SVGKitLogVerbose(NSString *format, ...) {
-    NSLog(@"%@", format);
+    if (!isLoggerEnabled) return;
+    va_list args;
+    va_start(args, format);
+    NSLogv([NSString stringWithFormat:@"📢 [VERBOSE]: %@", format], args);
+    va_end(args);
 }
 

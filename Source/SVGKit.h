@@ -22,6 +22,7 @@
 
 @interface SVGKit : NSObject
 
++ (void)setLoggerEnabled:(BOOL)enabled;
 
 @end
 
