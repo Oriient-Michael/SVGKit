@@ -22,7 +22,7 @@
 
 @interface SVGKit : NSObject
 
-+ (void) enableLogging;
++ (void)setLoggerEnabled:(BOOL)enabled;
 
 @end
 
@@ -135,7 +135,6 @@ FOUNDATION_EXPORT const unsigned char SVGKitFramework_VersionString[];
 
 #import "SVGKImage+CGContext.h"
 #import "SVGKExporterNSData.h"
-#import "SVGKExporterNSImage.h"
 #import "SVGKExporterUIImage.h"
 #import "SVGKSourceLocalFile.h"
 #import "SVGKSourceString.h"
@@ -165,7 +164,6 @@ FOUNDATION_EXPORT const unsigned char SVGKitFramework_VersionString[];
 #import "SVGKLayeredImageView.h"
 #import "SVGKPattern.h"
 #import "SVGUtils.h"
-#import "SVGKImageRep.h"
 #import "NSData+NSInputStream.h"
 #import "SVGKSourceNSData.h"
 #import "SVGKInlineResource.h"

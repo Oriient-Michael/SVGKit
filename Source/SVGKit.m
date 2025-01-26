@@ -7,12 +7,12 @@
 //
 
 #import "SVGKit.h"
-#import "CocoaLumberjack/DDOSLogger.h"
+#import "SVGKLogger.h"
 
 @implementation SVGKit : NSObject
 
-+ (void) enableLogging {
-    [DDLog addLogger:[DDOSLogger sharedInstance]];
++ (void)setLoggerEnabled:(BOOL)enabled {
+    setSvgLoggerEnabled(enabled);
 }
 
 @end

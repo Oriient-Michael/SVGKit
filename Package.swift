@@ -1,49 +1,34 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
-    name: "SVGKit",
+    name: "OriientSVG",
     platforms: [
-        .macOS(.v10_10),
         .iOS(.v13),
-        .tvOS(.v13)
     ],
     products: [
         .library(
-            name: "SVGKit",
-            targets: ["SVGKit"]
-        ),
-        .library(
-            name: "SVGKitSwift",
-            targets: ["SVGKitSwift"]
+            name: "OriientSVG",
+            type: .static,
+            targets: ["OriientSVG"]
         )
     ],
-    dependencies: [
-        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", .upToNextMajor(from: "3.7.0"))
-    ],
+    dependencies: [],
     targets: [
         .target(
-            name: "SVGKit",
-            dependencies: [
-                "CocoaLumberjack"
-            ],
+            name: "OriientSVG",
+            dependencies: [],
             path: "Source",
             exclude: [
                 "SwiftUI additions"
             ],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")],
+            resources: [],
             publicHeadersPath: "include",
             cSettings: [
                 .headerSearchPath("privateHeaders"),
-                .define("NS_BLOCK_ASSERTIONS", to: "1", .when(configuration: .release))
+                .define("NS_BLOCK_ASSERTIONS", to: "1", .when(configuration: .release)),
+                .define("NDEBUG", to: "1", .when(configuration: .release))
             ]
-        ),
-        .target(
-            name: "SVGKitSwift",
-            dependencies: [
-                "SVGKit"
-            ],
-            path: "Source/SwiftUI additions"
         )
     ]
 )
