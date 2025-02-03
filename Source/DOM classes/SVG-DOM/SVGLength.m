@@ -616,12 +616,12 @@ static float cachedDevicePixelsPerInch;
     
     if( [platform hasPrefix:@"x86_64"] || [platform hasPrefix:@"arm64"])
     {
-        SVGKitLogWarn(@"[%@] WARNING: you are running on the simulator; it's impossible for us to calculate centimeter/millimeter/inches units correctly");
+        SVGKitLogWarn(@"[%@] WARNING: you are running on the simulator; it's impossible for us to calculate centimeter/millimeter/inches units correctly", [self class]);
         return 132.0f; // Simulator, running on desktop machine
     }
 
     NSAssert(FALSE, @"Cannot determine the PPI values for current device; returning 0.0f - hopefully this will crash your code (you CANNOT run SVG's that use CM/IN/MM etc until you fix this)" );
-    return 0.0f; // Bet you'll get a divide by zero here...
+    return 401.0f; // Bet you'll get a divide by zero here...
 }
 
 @end
